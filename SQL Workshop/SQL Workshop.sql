@@ -1,13 +1,12 @@
 -- ACTIVIDAD 3 SQL WORKSHOP
 -- CREADO POR:  ALEJANDRO MIRANDA SANCHEZ
 -- CODIGO:      230182001
--- FECHA:       22/08/2023
+-- FECHA:       01/09/2023
 
 -- Find out how many departments exist in the company.                      (1)
 SELECT COUNT(DEPARTMENT_ID) FROM DEPARTMENTS;
 
 --Find out if there are any employees without a manager.                    (2)
-SELECT * FROM EMPLOYEES WHERE JOB_ID NOT LIKE '%_MAN';
 SELECT * FROM EMPLOYEES WHERE EMPLOYEE_ID
 NOT IN (SELECT MANAGER_ID FROM DEPARTMENTS WHERE MANAGER_ID IS NOT NULL);
 
